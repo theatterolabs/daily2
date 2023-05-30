@@ -36,13 +36,18 @@ overflow: auto;
 <body>
   <script>
 var tabLabel     = document.querySelector('.tab-labels'),
-	mainDiv =  document.getElementById('game-screen'),
+	mainDiv =  document.getElementById('game-screen test'),
   tabWrap = document.querySelector('.tab-wrapper'),
     stop      = tabLabel.offsetTop - 60,
     docBody   = document.documentElement || document.body.parentNode || document.body,
     hasOffset = window.pageYOffset !== undefined,
     scrollTop;
-
+window.onload = scrollStick();
+function scrollStick() {
+	mainDiv.className = 'overflows';
+	 tabWrap.className = 'extend'; 
+	
+}
 window.onscroll = function (e) {
   // cross-browser compatible scrollTop.
   scrollTop = hasOffset ? window.pageYOffset : docBody.scrollTop;
@@ -50,14 +55,14 @@ window.onscroll = function (e) {
   // if user scrolls to 60px from the top of the left div
   if (scrollTop >= stop) {
     // stick the div
-    mainDiv.className = 'overflows';
+    mainDiv.className = '';
     tabLabel.className = 'sticky';
-    tabWrap.className = 'extend';
+    tabWrap.className = '';
   } else {
     // release the div
-    mainDiv.className = '';
+    mainDiv.className = 'overflows';
     tabLabel.className = '';
-    tabWrap.className = ''; 
+    tabWrap.className = 'extend'; 
   }
 }
 </script>
