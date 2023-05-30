@@ -35,9 +35,9 @@ overflow: auto;
 </head>
 <body>
   <script>
-var tabLabel     = document.getElementsByClassName("tab-labels"),
+var tabLabel     = document.querySelector('.tab-labels'),
 	mainDiv =  document.getElementsByTagName('main')[0],
-  tabWrap = document.getElementsByClassName("tab-wrapper"),
+  tabWrap = document.querySelector('.tab-wrapper'),
     stop      = tabLabel.offsetTop - 60,
     docBody   = document.documentElement || document.body.parentNode || document.body,
     hasOffset = window.pageYOffset !== undefined,
