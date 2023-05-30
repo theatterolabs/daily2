@@ -5659,7 +5659,7 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
       return colorArray[randomIndex];
     }
     function redirectToGameUrl(url, challengeId, currentLevel, reward, timer) {
-      window.location.href = `https://theatterolabs.github.io/miner2/?userId=${data.userId}&id=${challengeId}&accessToken=${data.accessToken}&currentLevel=${currentLevel}&completionReward=${reward}&timer=${timer}`;
+      window.location.href = `https://theatterolabs.github.io/miner2/?userId=${data.userId}&id=${challengeId}&access_token=${data.accessToken}&currentLevel=${currentLevel}&completionReward=${reward}&timer=${timer}`;
     }
     onMounted(async () => {
     });
