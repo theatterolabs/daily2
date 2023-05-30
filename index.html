@@ -39,7 +39,7 @@ overflow: auto;
   <script>
 var tabLabel     = document.getElementsByClassName('tab-labels'),
 	mainDiv =  document.getElementsByTagName("main"),
-  tabWrap = document.getElementsByClassName('tab-wrapper')[0],
+  tabWrap = document.getElementsByClassName('tab-wrapper'),
     stop      = tabLabel.offsetTop - 60,
     docBody   = document.documentElement || document.body.parentNode || document.body,
     hasOffset = window.pageYOffset !== undefined,
@@ -48,6 +48,11 @@ window.onload = scrollStick();
 function scrollStick() {
 	mainDiv.className = "overflows"; 
 	tabWrap.classList.add("extend");
+	for(var i = 0; i < tabWrap.length; i++)
+		{
+    			tabWrap[i].classList.add('extend');
+    			
+		}
 	 
 	
 }
