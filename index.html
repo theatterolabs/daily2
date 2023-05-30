@@ -14,8 +14,53 @@
   <title>Daily Challenge</title>  
   <script type="module" crossorigin src="./assets/index-670d6342.js"></script>
   <link rel="stylesheet" href="./assets/index-c34a9c4c.css">
+  <style>
+
+.tab-labels.sticky {
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 10000;
+}
+
+.overflows {
+overflow: auto;
+
+}
+
+.tab-wrapper.extend {
+  height: auto;
+}
+</style>
 </head>
 <body>
+  <script>
+var tabLabel     = document.getElementsByClassName("tab-labels")
+	mainDiv =  document.getElementsByTagName('main')[0],
+  tabWrap = document.getElementsByClassName("tab-wrapper"),
+    stop      = left.offsetTop - 60,
+    docBody   = document.documentElement || document.body.parentNode || document.body,
+    hasOffset = window.pageYOffset !== undefined,
+    scrollTop;
+
+window.onscroll = function (e) {
+  // cross-browser compatible scrollTop.
+  scrollTop = hasOffset ? window.pageYOffset : docBody.scrollTop;
+
+  // if user scrolls to 60px from the top of the left div
+  if (scrollTop >= stop) {
+    // stick the div
+    mainDiv.className = 'overflows';
+    tabLabel.className = 'sticky';
+    tabWrap.className = 'extend';
+  } else {
+    // release the div
+    mainDiv.className = '';
+    tabLabel.className = '';
+    tabWrap.className = ''; 
+  }
+}
+</script>
   <div id="app"></div>
   
 </body>
