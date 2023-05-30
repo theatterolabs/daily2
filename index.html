@@ -46,7 +46,11 @@ var tabLabel     = document.getElementsByClassName('tab-labels'),
     scrollTop;
 window.onload = scrollStick();
 function scrollStick() {
-	mainDiv.className = "overflows"; 
+	for(var i = 0; i < mainDiv.length; i++)
+		{
+    			mainDiv[i].classList.add('overflows');
+    			
+		}
 	tabWrap.classList.add("extend");
 	for(var i = 0; i < tabWrap.length; i++)
 		{
