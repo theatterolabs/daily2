@@ -5775,7 +5775,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
       })
     });
     function getAvatar(fromApi) {
-      return fromApi ? fromApi : "assets/images/user.png";
+      return fromApi ? fromApi : "./assets/images/user.png";
     }
     onMounted(async () => {
       await getUserRank();
