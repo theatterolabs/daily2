@@ -46,8 +46,8 @@ var tabLabel     = document.getElementsByClassName('tab-labels'),
     scrollTop;
 window.onload = scrollStick();
 function scrollStick() {
-	mainDiv.className = 'overflows';
-	 tabWrap.className = 'extend'; 
+	mainDiv.classList.add("overflows");
+	 tabWrap.classList.add("extend");
 	
 }
 window.onscroll = function (e) {
@@ -57,14 +57,14 @@ window.onscroll = function (e) {
   // if user scrolls to 60px from the top of the left div
   if (scrollTop >= stop) {
     // stick the div
-    mainDiv.className = '';
-    tabLabel.className = 'sticky';
-    tabWrap.className = '';
+    mainDiv.classList.remove("overflows");
+    tabLabel.classList.add("sticky");
+    tabWrap.classList.remove("extend");
   } else {
     // release the div
-    mainDiv.className = 'overflows';
+    mainDiv.classList.add("overflows");
     tabLabel.className = '';
-    tabWrap.className = 'extend'; 
+    tabWrap.classList.add("extend");
   }
 }
 </script>
